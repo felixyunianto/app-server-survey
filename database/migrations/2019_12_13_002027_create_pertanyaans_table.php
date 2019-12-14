@@ -14,9 +14,14 @@ class CreatePertanyaansTable extends Migration
     public function up()
     {
         Schema::create('pertanyaans', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->text('pertanyaan');
+            $table->unsignedbigInteger('sub_id');
+            $table->foreign('sub_id')->references('id')->on('sub_categories');
+            $table->text('answers');
             $table->timestamps();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

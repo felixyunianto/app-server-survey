@@ -18,3 +18,4 @@ use Illuminate\Http\Request;
 // });
 
 Route::get('/getData', "CategoryController@getData");
+Route::get('/getPertanyaan', "PertanyaanController@getPertanyaan");

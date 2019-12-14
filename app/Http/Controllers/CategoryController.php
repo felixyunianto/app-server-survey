@@ -10,6 +10,9 @@ use App\Category;
 class CategoryController extends Controller
 {
     public function getData(){
-        return Category::with('sub')->get();
+        $category = Category::with('sub')->get();
+
+        // $sub = Sub_Category::with('questions')->get();
+        return $category;
     }
 }

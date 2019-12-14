@@ -14,4 +14,7 @@ class Sub_Category extends Model
     {
         return $this->belongsTo('App\Category','foreign-key');
     }
+    public function questions(){
+        return $this->hasMany('App\Pertanyaan','sub_id','id');
+    }
 }
